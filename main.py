@@ -45,8 +45,10 @@ def menu():
                 read_laptops()
             case "3":
                 # sadece test amaçlı, gerçek eklemeyi ark. yapacak
-                sample = Laptop("Dell","XPS","USA",2022,"SSD",16,"i7","RTX3050",3200,15.6)
-                laptops.append(sample)
+                brand = input("brand = ")
+                model = input ("model = ")
+                laptops.append(brand)
+                laptops.append(model)
                 print("Sample laptop added to temp list. (Not saved until you press 1)")
             case "4":
                 break

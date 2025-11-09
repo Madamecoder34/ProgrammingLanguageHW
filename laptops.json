@@ -22,5 +22,17 @@
         "gpu_model": "RTX3050",
         "speed_mhz": 3200,
         "screen_size": 15.6
+    },
+    {
+        "brand": "Dell",
+        "model": "XPS",
+        "country": "USA",
+        "year": 2022,
+        "drive_type": "SSD",
+        "memory_GB": 16,
+        "cpu_type": "i7",
+        "gpu_model": "RTX3050",
+        "speed_mhz": 3200,
+        "screen_size": 15.6
     }
 ]
