@@ -44,12 +44,24 @@ def menu():
             case "2":
                 read_laptops()
             case "3":
-                # sadece test amaçlı, gerçek eklemeyi ark. yapacak
+                # sadece test amaçlı: dict şeklinde bir sample ekle (sonra 1 ile kaydedilir)
                 brand = input("brand = ")
-                model = input ("model = ")
-                laptops.append(brand)
-                laptops.append(model)
-                print("Sample laptop added to temp list. (Not saved until you press 1)")
+                model = input("model = ")
+                sample = {
+                    "brand": brand,
+                    "model": model,
+                    "country": None,
+                    "year": None,
+                    "drive_type": None,
+                    "memory_GB": None,
+                    "cpu_type": None,
+                    "gpu_model": None,
+                    "speed_mhz": None,
+                    "screen_size": None,
+                }
+                laptops.append(sample)
+                print("Sample laptop (dict) added to temp list. Not saved until you press 1")
+                print(f"Current temp list: {laptops}")
             case "4":
                 break
             case _:

@@ -34,5 +34,29 @@
         "gpu_model": "RTX3050",
         "speed_mhz": 3200,
         "screen_size": 15.6
+    },
+    {
+        "brand": "hello",
+        "model": "world",
+        "country": null,
+        "year": null,
+        "drive_type": null,
+        "memory_GB": null,
+        "cpu_type": null,
+        "gpu_model": null,
+        "speed_mhz": null,
+        "screen_size": null
+    },
+    {
+        "brand": "Huawei",
+        "model": "Matebook",
+        "country": null,
+        "year": null,
+        "drive_type": null,
+        "memory_GB": null,
+        "cpu_type": null,
+        "gpu_model": null,
+        "speed_mhz": null,
+        "screen_size": null
     }
 ]
