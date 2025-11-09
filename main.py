@@ -18,53 +18,14 @@ def add_laptop():
     print("Laptop added successfully.")
 
 def print_laptops():
-    for i, l in enumerate(laptops, start=1):
-        print(f"{i}. {l.brand} {l.model} ({l.year}) - {l.memoryGB}GB RAM, {l.driveType}") 
+    save_laptops(laptops)
 
-def find_laptop():
-    brand = input("Enter brand to search: ") 
-    model = input("Enter model to search: ")   
-    for l in laptops:
-        if l.brand == brand and l.model == model:
-            print(l.to_dict())
-            return
-    print("Laptop is not found.")
-
-def same_screen_size():
-    size = float(input("Screen Size: "))
-    filtered = [l.to_dict() for l in laptops if l.screenSize == size]
-    print(filtered if filtered else "Not found.")
-
-def modify_laptop():
-    brand = input("Brand: ")
-    model = input("Model: ")
-    for l in laptops:
-        if l.brand == brand and l.model == model:
-            field = input("Field to modify: ")
-            if hasattr(l, field):
-                new_value = input("New value: ")
-                # Convert to appropriate type if it's a numeric field
-                if field in ["year", "memoryGB", "speedMHz"]:
-                    new_value = int(new_value)
-                elif field == "screenSize":
-                    new_value = float(new_value)
-                setattr(l, field, new_value)
-                print("Updated.")
-                return
-            else:
-                print("Invalid field.")
-                return
-    print("Laptop is not found.")
-
-def delete_laptop():
-    brand = input("Brand: ")
-    model = input("Model: ")
-    for i, l in enumerate(laptops):
-        if l.brand == brand and l.model == model:
-            laptops.pop(i)
-            print("Deleted.")
-            return
-    print("Laptop is not found.")
+def read_laptops():
+    loaded = load_laptops()
+    if not loaded:
+        print("No laptops found.")
+    for i, l in enumerate(loaded, start=1):
+        print(f"Laptop {i}: {l.to_dict()}")
 
 def menu():
     while True:
