@@ -94,5 +94,65 @@
         "gpu_model": "nvidia",
         "speed_mhz": "3.1",
         "screen_size": "16.5"
+    },
+    {
+        "brand": "r",
+        "model": "r",
+        "country": "r",
+        "year": 4,
+        "drive_type": "r",
+        "memory_GB": "r",
+        "cpu_type": "r",
+        "gpu_model": "r",
+        "speed_mhz": "r",
+        "screen_size": "r"
+    },
+    {
+        "brand": "a",
+        "model": "a",
+        "country": "a",
+        "year": 2,
+        "drive_type": "a",
+        "memory_GB": "a",
+        "cpu_type": "a",
+        "gpu_model": "a",
+        "speed_mhz": "a",
+        "screen_size": "a"
+    },
+    {
+        "brand": "q",
+        "model": "q",
+        "country": "q",
+        "year": 3,
+        "drive_type": "a",
+        "memory_GB": "a",
+        "cpu_type": "a",
+        "gpu_model": "a",
+        "speed_mhz": "a",
+        "screen_size": "a"
+    },
+    {
+        "brand": "t",
+        "model": "t",
+        "country": "t",
+        "year": 5,
+        "drive_type": "t",
+        "memory_GB": "t",
+        "cpu_type": "t",
+        "gpu_model": "t",
+        "speed_mhz": "t",
+        "screen_size": "t"
+    },
+    {
+        "brand": "u",
+        "model": "u",
+        "country": "u",
+        "year": 7,
+        "drive_type": "u",
+        "memory_GB": "u",
+        "cpu_type": "u",
+        "gpu_model": "u",
+        "speed_mhz": "u",
+        "screen_size": "u"
     }
 ]

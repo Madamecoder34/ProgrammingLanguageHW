@@ -1,9 +1,63 @@
 from laptop import Laptop
 from storage import save_laptops, load_laptops
+import json
+import os
 
 laptops = [] #temp list to hold laptops
-##def add_laptop():
-    ## yasemin bura senin laptops a ekleme
+def add_laptop():
+    brand = input("Brand : ")
+    model = input("Model : ")
+    country = input("Country of Manifacture : ")
+    year = int (input("Year of Manifacture : "))
+    driveType = input("HDD Specification : ")
+    memoryGB = input("Memory(GB) : ")
+    cpuType = input("CPU type : ")
+    gpuModel = input("GPU type : ")
+    speedMHz = input("Speed (MHz) : ")
+    screenSize = input("Screen Size : ")    
+    sample = {
+       "brand": brand,
+        "model": model,
+        "country": country,
+        "year": year,
+        "drive_type": driveType,
+        "memory_GB": memoryGB,
+        "cpu_type": cpuType,
+        "gpu_model": gpuModel,
+        "speed_mhz": speedMHz,
+        "screen_size": screenSize,
+    }
+    laptops.append(sample)
+    print("Sample laptop (dict) added to temp list. Not saved until you press 1")
+    print(f"Current temp list: {laptops}")
+    
+def find_laptop():
+ json_path = os.path.join(os.path.dirname(__file__), "laptops.json")
+ with open(json_path, "r", encoding="utf-8") as f:
+    laptops = json.load(f)
+ brand = input("Enter brand to search: ").strip()
+ model = input("Enter model to search: ").strip()
+
+ found = [l for l in laptops if l ["brand"].lower() == brand.lower() and l["model"].lower() == model.lower()]
+ if found:
+    print("\nFound Laptop(s):")
+    for l in found:
+           print(found)
+ else:
+        print("\n No laptop found with that brand and model.\n")
+
+def print_all():
+    laptops = json.load(l)
+    if not laptops:
+        print("\n No laptops in the list.\n")
+    for l in laptops:
+        print(l)
+    print()
+    return
+    
+
+
+
 def save_and_clear():
     existing = load_laptops()
     normalized = []
@@ -34,8 +88,8 @@ def menu():
 1. Print to file
 2. Read from file
 3. Add a laptop
-4. Exit
-5.
+4. Find a laptop 
+5. Print all laptops
 """)
         choice = input("Choice: ")
 
@@ -45,26 +99,11 @@ def menu():
             case "2":
                 read_laptops()
             case "3":
-                # sadece test amaçlı: dict şeklinde bir sample ekle (sonra 1 ile kaydedilir)
-                brand = input("brand = ")
-                model = input("model = ")
-                sample = {
-                    "brand": brand,
-                    "model": model,
-                    "country": None,
-                    "year": None,
-                    "drive_type": None,
-                    "memory_GB": None,
-                    "cpu_type": None,
-                    "gpu_model": None,
-                    "speed_mhz": None,
-                    "screen_size": None,
-                }
-                laptops.append(sample)
-                print("Sample laptop (dict) added to temp list. Not saved until you press 1")
-                print(f"Current temp list: {laptops}")
+                add_laptop()   
             case "4":
-                break
+                find_laptop()
+            case "5":
+                print_all()
             case _:
                 print("Invalid choice. Please try again.")
                 
