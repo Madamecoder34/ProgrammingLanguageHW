@@ -2,27 +2,8 @@ from laptop import Laptop
 from storage import save_laptops, load_laptops
 
 laptops = [] #temp list to hold laptops
-
-def add_laptop():
-# sadece test amaçlı: dict şeklinde bir sample ekle (sonra 1 ile kaydedilir)
-    brand = input("brand = ")
-    model = input("model = ")
-    sample = {
-        "brand": brand,
-        "model": model,
-        "country": None,
-        "year": None,
-        "drive_type": None,
-        "memory_GB": None,
-        "cpu_type": None,
-        "gpu_model": None,
-        "speed_mhz": None,
-        "screen_size": None,
-             }
-    laptops.append(sample)
-    print("Sample laptop (dict) added to temp list. Not saved until you press 1")
-    print(f"Current temp list: {laptops}")
-
+##def add_laptop():
+    ## yasemin bura senin laptops a ekleme
 def save_and_clear():
     existing = load_laptops()
     normalized = []
@@ -52,8 +33,9 @@ def menu():
         print("""
 1. Print to file
 2. Read from file
-3. (For testing) Add a sample laptop to temp list
+3. Add a laptop
 4. Exit
+5.
 """)
         choice = input("Choice: ")
 
@@ -63,7 +45,24 @@ def menu():
             case "2":
                 read_laptops()
             case "3":
-                add_laptop()
+                # sadece test amaçlı: dict şeklinde bir sample ekle (sonra 1 ile kaydedilir)
+                brand = input("brand = ")
+                model = input("model = ")
+                sample = {
+                    "brand": brand,
+                    "model": model,
+                    "country": None,
+                    "year": None,
+                    "drive_type": None,
+                    "memory_GB": None,
+                    "cpu_type": None,
+                    "gpu_model": None,
+                    "speed_mhz": None,
+                    "screen_size": None,
+                }
+                laptops.append(sample)
+                print("Sample laptop (dict) added to temp list. Not saved until you press 1")
+                print(f"Current temp list: {laptops}")
             case "4":
                 break
             case _:
