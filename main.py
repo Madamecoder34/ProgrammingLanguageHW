@@ -1,7 +1,10 @@
 from laptop import Laptop
 from storage import save_laptops, load_laptops
 import json
+<<<<<<< HEAD
 import os
+=======
+>>>>>>> 232dd428cd7b74939060f6872820947416ee18ff
 
 laptops = [] #temp list to hold laptops
 def add_laptop():
@@ -32,8 +35,12 @@ def add_laptop():
     print(f"Current temp list: {laptops}")
     
 def find_laptop():
+<<<<<<< HEAD
  json_path = os.path.join(os.path.dirname(__file__), "laptops.json")
  with open(json_path, "r", encoding="utf-8") as f:
+=======
+ with open("laptops.json", "r", encoding="utf-8") as f:
+>>>>>>> 232dd428cd7b74939060f6872820947416ee18ff
     laptops = json.load(f)
  brand = input("Enter brand to search: ").strip()
  model = input("Enter model to search: ").strip()
@@ -42,6 +49,7 @@ def find_laptop():
  if found:
     print("\nFound Laptop(s):")
     for l in found:
+<<<<<<< HEAD
            print(found)
  else:
         print("\n No laptop found with that brand and model.\n")
@@ -80,6 +88,14 @@ def show_laptops_according_to_size():
            print(find_inch)
 
     
+=======
+            print(laptops.found)
+ else:
+        print("\n No laptop found with that brand and model.\n")
+
+
+
+>>>>>>> 232dd428cd7b74939060f6872820947416ee18ff
 
 def save_and_clear():
     existing = load_laptops()
@@ -111,9 +127,14 @@ def menu():
 1. Print to file
 2. Read from file
 3. Add a laptop
+<<<<<<< HEAD
 4. Find a laptop 
 5. Print all laptops
 6. Find laptops according to screen size 
+=======
+4. Find a laptop
+5.
+>>>>>>> 232dd428cd7b74939060f6872820947416ee18ff
 """)
         choice = input("Choice: ")
 
@@ -127,9 +148,13 @@ def menu():
             case "4":
                 find_laptop()
             case "5":
+<<<<<<< HEAD
                 print_all()
             case "6":
                 show_laptops_according_to_size()
+=======
+                break
+>>>>>>> 232dd428cd7b74939060f6872820947416ee18ff
             case _:
                 print("Invalid choice. Please try again.")
                 
