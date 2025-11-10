@@ -45,7 +45,7 @@
         "cpu_type": null,
         "gpu_model": null,
         "speed_mhz": null,
-        "screen_size": null
+        "screen_size": 14
     },
     {
         "brand": "Huawei",
@@ -57,7 +57,7 @@
         "cpu_type": null,
         "gpu_model": null,
         "speed_mhz": null,
-        "screen_size": null
+        "screen_size": 13
     },
     {
         "brand": "yasemin",
@@ -69,7 +69,7 @@
         "cpu_type": null,
         "gpu_model": null,
         "speed_mhz": null,
-        "screen_size": null
+        "screen_size": 13
     },
     {
         "brand": "dfws",
@@ -93,7 +93,7 @@
         "cpu_type": "i9",
         "gpu_model": "nvidia",
         "speed_mhz": "3.1",
-        "screen_size": "16.5"
+        "screen_size": 16.5
     },
     {
         "brand": "r",
@@ -154,5 +154,29 @@
         "gpu_model": "u",
         "speed_mhz": "u",
         "screen_size": "u"
+    },
+    {
+        "brand": "y",
+        "model": "y",
+        "country": "y",
+        "year": 12,
+        "drive_type": "y",
+        "memory_GB": "y",
+        "cpu_type": "y",
+        "gpu_model": "y",
+        "speed_mhz": "y",
+        "screen_size": "14.5"
+    },
+    {
+        "brand": "y",
+        "model": "y",
+        "country": "y",
+        "year": 56,
+        "drive_type": "y",
+        "memory_GB": "y",
+        "cpu_type": "y",
+        "gpu_model": "y",
+        "speed_mhz": "y",
+        "screen_size": 12.3
     }
 ]

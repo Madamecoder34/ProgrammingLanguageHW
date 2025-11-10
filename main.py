@@ -14,7 +14,7 @@ def add_laptop():
     cpuType = input("CPU type : ")
     gpuModel = input("GPU type : ")
     speedMHz = input("Speed (MHz) : ")
-    screenSize = input("Screen Size : ")    
+    screenSize = float(input("Screen Size : "))    
     sample = {
        "brand": brand,
         "model": model,
@@ -47,16 +47,39 @@ def find_laptop():
         print("\n No laptop found with that brand and model.\n")
 
 def print_all():
-    laptops = json.load(l)
+    json_path = os.path.join(os.path.dirname(__file__), "laptops.json")
+
+    # Read the JSON file
+    with open(json_path, "r", encoding="utf-8") as f:
+        laptops = json.load(f)
+
     if not laptops:
-        print("\n No laptops in the list.\n")
+        print("\nNo laptops in the list.\n")
+        return
+
+    print("\nAll laptops in the list:\n")
     for l in laptops:
         print(l)
     print()
-    return
     
+def show_laptops_according_to_size():
+    json_path = os.path.join(os.path.dirname(__file__), "laptops.json")
+    with open(json_path, "r", encoding="utf-8") as f:
+        laptops = json.load(f)
 
+    inch = float(input("Enter inch value for see the laptos : ")) 
 
+    find_inch = [l for l in laptops if l ["screen_size"] == inch ]
+
+    if not laptops:
+        print("\n No laptop found with that has inch.\n")
+
+    if find_inch:
+       print("\nFound Laptop(s):")
+    for l in find_inch:
+           print(find_inch)
+
+    
 
 def save_and_clear():
     existing = load_laptops()
@@ -90,6 +113,7 @@ def menu():
 3. Add a laptop
 4. Find a laptop 
 5. Print all laptops
+6. Find laptops according to screen size 
 """)
         choice = input("Choice: ")
 
@@ -104,6 +128,8 @@ def menu():
                 find_laptop()
             case "5":
                 print_all()
+            case "6":
+                show_laptops_according_to_size()
             case _:
                 print("Invalid choice. Please try again.")
                 
