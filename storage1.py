@@ -8,11 +8,8 @@ def save_laptops(Laptops, filename="laptops.json"):
 def load_laptops(filename="laptops.json"):
     laptops = []
     try:
-<<<<<<< HEAD
+
         with open(filename, "r", encoding="utf-8") as f:
-=======
-        with open(filename, "r", encoding="uft-8") as f:
->>>>>>> 232dd428cd7b74939060f6872820947416ee18ff
             data = json.load(f)
             # import here to avoid circular imports during module import time
             from laptop import Laptop
