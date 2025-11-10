@@ -2,7 +2,32 @@ from laptop import Laptop
 from storage import save_laptops, load_laptops
 
 laptops = [] #temp list to hold laptops
-##def add_laptop():
+def add_laptop():
+    brand = input("Brand : ")
+    model = input("Model : ")
+    country = input("Country of Manifacture : ")
+    year = int (input("Year of Manifacture : "))
+    driveType = input("HDD Specification : ")
+    memoryGB = input("Memory(GB) : ")
+    cpuType = input("CPU type : ")
+    gpuModel = input("GPU type : ")
+    speedMHz = input("Speed (MHz) : ")
+    screenSize = input("Screen Size : ")    
+    sample = {
+       "brand": brand,
+        "model": model,
+        "country": country,
+        "year": year,
+        "drive_type": driveType,
+        "memory_GB": memoryGB,
+        "cpu_type": cpuType,
+        "gpu_model": gpuModel,
+        "speed_mhz": speedMHz,
+        "screen_size": screenSize,
+    }
+    laptops.append(sample)
+    print("Sample laptop (dict) added to temp list. Not saved until you press 1")
+    print(f"Current temp list: {laptops}")
     ## yasemin bura senin laptops a ekleme
 def save_and_clear():
     existing = load_laptops()
@@ -33,8 +58,9 @@ def menu():
         print("""
 1. Print to file
 2. Read from file
-3. (For testing) Add a sample laptop to temp list
+3. Add a laptop
 4. Exit
+5.
 """)
         choice = input("Choice: ")
 
@@ -44,24 +70,8 @@ def menu():
             case "2":
                 read_laptops()
             case "3":
-                # sadece test amaçlı: dict şeklinde bir sample ekle (sonra 1 ile kaydedilir)
-                brand = input("brand = ")
-                model = input("model = ")
-                sample = {
-                    "brand": brand,
-                    "model": model,
-                    "country": None,
-                    "year": None,
-                    "drive_type": None,
-                    "memory_GB": None,
-                    "cpu_type": None,
-                    "gpu_model": None,
-                    "speed_mhz": None,
-                    "screen_size": None,
-                }
-                laptops.append(sample)
-                print("Sample laptop (dict) added to temp list. Not saved until you press 1")
-                print(f"Current temp list: {laptops}")
+                add_laptop()
+               
             case "4":
                 break
             case _:
