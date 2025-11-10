@@ -1,5 +1,6 @@
 from laptop import Laptop
 from storage import save_laptops, load_laptops
+import json
 
 laptops = [] #temp list to hold laptops
 def add_laptop():
@@ -28,7 +29,24 @@ def add_laptop():
     laptops.append(sample)
     print("Sample laptop (dict) added to temp list. Not saved until you press 1")
     print(f"Current temp list: {laptops}")
-    ## yasemin bura senin laptops a ekleme
+    
+def find_laptop():
+ with open("laptops.json", "r", encoding="utf-8") as f:
+    laptops = json.load(f)
+ brand = input("Enter brand to search: ").strip()
+ model = input("Enter model to search: ").strip()
+
+ found = [l for l in laptops if l ["brand"].lower() == brand.lower() and l["model"].lower() == model.lower()]
+ if found:
+    print("\nFound Laptop(s):")
+    for l in found:
+            print(laptops.found)
+ else:
+        print("\n No laptop found with that brand and model.\n")
+
+
+
+
 def save_and_clear():
     existing = load_laptops()
     normalized = []
@@ -59,7 +77,7 @@ def menu():
 1. Print to file
 2. Read from file
 3. Add a laptop
-4. Exit
+4. Find a laptop
 5.
 """)
         choice = input("Choice: ")
@@ -70,9 +88,10 @@ def menu():
             case "2":
                 read_laptops()
             case "3":
-                add_laptop()
-               
+                add_laptop()   
             case "4":
+                find_laptop()
+            case "5":
                 break
             case _:
                 print("Invalid choice. Please try again.")
