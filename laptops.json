@@ -58,5 +58,29 @@
         "gpu_model": null,
         "speed_mhz": null,
         "screen_size": null
+    },
+    {
+        "brand": "yasemin",
+        "model": "v3",
+        "country": null,
+        "year": null,
+        "drive_type": null,
+        "memory_GB": null,
+        "cpu_type": null,
+        "gpu_model": null,
+        "speed_mhz": null,
+        "screen_size": null
+    },
+    {
+        "brand": "dfws",
+        "model": "dsa",
+        "country": null,
+        "year": null,
+        "drive_type": null,
+        "memory_GB": null,
+        "cpu_type": null,
+        "gpu_model": null,
+        "speed_mhz": null,
+        "screen_size": null
     }
 ]
